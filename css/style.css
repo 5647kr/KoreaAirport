@@ -1,0 +1,102 @@
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+main {
+  width: 100%;
+  box-shadow: inset 0 0 10px blue;
+}
+
+main section {
+  margin-bottom: 80px;
+  box-shadow: inset 0 0 10px red;
+}
+
+section > h2 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: var(--font-sbw);
+}
+
+section > h3 {
+  text-align: center;
+  font-size: var(--font-lz);
+  font-weight: var(--font-sbw);
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+}
+
+#airportSection {
+  overflow: hidden;
+}
+
+
+/* 태블릿 이후부터 width: 100% */
+#airportSection .guideList {
+  width: 300%;
+  display: flex;
+  position: relative;
+}
+
+/* 태블릿 이후부터 padding, bg 없음 */
+#airportSection .guideList > li {
+  width: calc(100% / 3);
+  padding: 0 30px;
+  background: url("../img/photo/service-bgImg.jpg") no-repeat 100% 100% / cover;
+}
+
+#airportSection .guideList article {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--main-color);
+}
+
+#airportSection .guideList .arrive-service {
+  background-color: var(--sub-color);
+}
+
+#airportSection .guideList .departure-service {
+  background-color: var(--content-color);
+}
+
+#airportSection .guideList article :where(h3, h4) {
+  color: var(--whitebg-color);
+  font-size: 30px;
+  font-weight: var(--font-sbw);
+}
+
+#airportSection .guideList article h4 {
+  font-size: var(--font-lz);
+}
+
+#airportSection .guideList article ul {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 40px;
+}
+
+#airportSection .guideList article a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#airportSection .guideList article ul p {
+  color: var(--whitebg-color);
+}
+
+#airportSection .toggleBtnWrap button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+#airportSection .toggleBtnWrap button:last-child {
+  right: 0;
+}
