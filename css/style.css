@@ -7,12 +7,10 @@ header {
 
 main {
   width: 100%;
-  box-shadow: inset 0 0 10px blue;
 }
 
 main section {
   margin-bottom: 80px;
-  box-shadow: inset 0 0 10px red;
 }
 
 section > h2 {
@@ -85,18 +83,212 @@ section > h3 {
   display: block;
 }
 
+#airportSection .guideList article img {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1 / 1;
+  vertical-align: top;
+}
 #airportSection .guideList article ul p {
   color: var(--whitebg-color);
 }
 
 #airportSection .toggleBtnWrap button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 55%;
   width: 30px;
   height: 30px;
 }
 
 #airportSection .toggleBtnWrap button:last-child {
   right: 0;
+}
+
+
+#trafficSection {
+  padding: 0 30px;
+}
+
+
+#trafficSection .busStateWrap {
+  margin-bottom: 40px;
+}
+
+#trafficSection .busStateWrap h4 {
+  font-weight: var(--font-sbw);
+  margin-bottom: 10px;
+}
+
+#trafficSection .busStateWrap .busState {
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* 
+pc 이상부터 그리드 적용
+#trafficSection .busStateWrap .busState ul {
+  display: grid;
+} */
+
+#trafficSection .busStateWrap .busState li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+#trafficSection .busStateWrap .busState .busTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#trafficSection .busState .busTitle :where(strong, p) {
+  font-weight: var(--font-sbw);
+}
+
+#trafficSection .busState .busTitle p {
+  font-size: var(--font-sz);
+}
+
+#trafficSection .busStateWrap .busState .progress {
+  width: 100%;
+  height: 10px;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+}
+
+#trafficSection .busStateWrap .busState .progressing {
+  width: 90%;
+  height: 10px;
+  border-radius: 20px;
+  background-color: #DC143C;
+}
+
+#trafficSection .trafficWrap ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+
+#trafficSection .trafficWrap li {
+  aspect-ratio: 1 / 1;
+  padding: 10px;
+  background-color: var(--skybg-color);
+  border-radius: 10px;
+  position: relative;
+}
+
+#trafficSection .trafficWrap li a {
+  width: 100%;
+  height: 100%;
+}
+
+#trafficSection .trafficWrap li img {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  aspect-ratio: 1 / 1;
+}
+
+#tipSection {
+  padding: 30px 0;
+  background-color: var(--main-color);
+}
+
+#tipSection h2 {
+  color: var(--whitebg-color);
+}
+
+#tipSection h3 {
+  color: rgba(249, 252, 255, 0.5);
+}
+
+#tipSection .tipList {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+}
+
+#tipSection .tipList::-webkit-scrollbar {
+  display: none;
+}
+
+#tipSection .tipList li {
+  background: no-repeat 50% 100% / cover;
+  min-width: 140px;
+  height: 280px;
+  border-radius: 60px;
+  padding: 20px;
+}
+
+#tipSection .tipList :where(h4, p) {
+  color: var(--whitebg-color);
+  font-weight: var(--font-sbw);
+  text-align: center;
+}
+
+#tipSection .tipList li:nth-child(1) {
+  background-image: url("../img/photo/tip-restaurant.jpg");
+}
+
+#tipSection .tipList li:nth-child(2) {
+  background-image: url("../img/photo/tip-shopping.jpg");
+}
+
+#tipSection .tipList li:nth-child(3) {
+  background-image: url("../img/photo/tip-pet.jpg");
+}
+
+#tipSection .tipList li:nth-child(4) {
+  background-image: url("../img/photo/tip-lounge.jpg");
+}
+
+#tipSection .tipList li:nth-child(5) {
+  background-image: url("../img/photo/tip-play.jpg");
+}
+
+#tipSection .tipList li:nth-child(6) {
+  background-image: url("../img/photo/tip-notice.jpg");
+}
+
+#tipSection .tipList li:nth-child(even) {
+  margin-top: 70px;
+}
+
+#flightSection {
+  padding: 0 30px;
+}
+
+#flightSection .flightList {
+  border: 1px solid var(--main-color);
+  padding: 20px;
+  min-height: 400px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#flightSection .flightList strong {
+  font-weight: var(--font-mw);
+  margin-top: 4px;
+}
+
+footer {
+  background-color: #222222;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer img {
+  height: 32px;
+}
+
+footer p {
+  color: var(--whitebg-color);
 }
