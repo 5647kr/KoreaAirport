@@ -28,13 +28,12 @@ section > h3 {
 }
 
 header {
-  box-shadow: inset 0 0 10px blue;
   height: 80px;
   position: fixed;
   top: 0;
 }
 
-header .headerWrap {
+header [class^="headerWrap"] {
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -42,13 +41,18 @@ header .headerWrap {
   padding: 0 40px;
 }
 
-header .headerWrap button img {
+header .headerWrap-main {
+  background-color: var(--whitebg-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+header [class^="headerWrap"] button img {
   width: 24px;
   height: 24px;
   aspect-ratio: 1 / 1;
 }
 
-header .headerWrap a img {
+header [class^="headerWrap"] a img {
   height: 33px;
   vertical-align: top;
 }
@@ -73,7 +77,6 @@ header .headerWrap a img {
 }
 
 #introSection .imgControl {
-  box-shadow: inset 0 0 10px blue;
   position: absolute;
   left: 50%;
   bottom: 50px;
@@ -123,7 +126,6 @@ header .headerWrap a img {
   font-size: var(--font-smz);
   font-weight: var(--font-mw);
   color: rgba(249, 252, 255, 0.8);
-  /* color: red; */
 }
 
 #airportSection {
@@ -191,7 +193,6 @@ header .headerWrap a img {
 }
 
 #airportSection .guideWrap {
-  box-shadow: inset 0 0 10px blue;
   position: relative;
 }
 
