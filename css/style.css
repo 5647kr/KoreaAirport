@@ -27,16 +27,113 @@ section > h3 {
   margin-bottom: 40px;
 }
 
+header {
+  box-shadow: inset 0 0 10px blue;
+  height: 80px;
+  position: fixed;
+  top: 0;
+}
+
+header .headerWrap {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+header .headerWrap button img {
+  width: 24px;
+  height: 24px;
+  aspect-ratio: 1 / 1;
+}
+
+header .headerWrap a img {
+  height: 33px;
+  vertical-align: top;
+}
+
+#introSection {
+  height: 400px;
+  position: relative;
+}
+
+#introSection .imgWrap {
+  position: relative;
+  height: 100%;
+}
+
+#introSection .imgWrap img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+}
+
+#introSection .imgControl {
+  box-shadow: inset 0 0 10px blue;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  padding: 0 20px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#introSection .alertWrap {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+}
+
+#introSection .alertWrap .notice {
+  width: 40px;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#introSection .alertWrap .notice img {
+  width: 22px;
+}
+
+#introSection .alertWrap .notice strong {
+  display: none;
+}
+
+#introSection .alertWrap ul {
+  width: calc(100% - 40px);
+  padding: 0 20px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#introSection .alertWrap ul li {
+  height: 40px;
+  line-height: 40px;
+  font-size: var(--font-smz);
+  font-weight: var(--font-mw);
+  color: rgba(249, 252, 255, 0.8);
+  /* color: red; */
+}
+
 #airportSection {
   overflow: hidden;
 }
-
 
 /* 태블릿 이후부터 width: 100% */
 #airportSection .guideList {
   width: 300%;
   display: flex;
-  position: relative;
 }
 
 /* 태블릿 이후부터 padding, bg 없음 */
@@ -93,17 +190,19 @@ section > h3 {
   color: var(--whitebg-color);
 }
 
-#airportSection .toggleBtnWrap button {
+#airportSection .guideWrap {
+  box-shadow: inset 0 0 10px blue;
+  position: relative;
+}
+
+#airportSection .guideWrap .toggleBtnWrap {
   position: absolute;
-  top: 55%;
-  width: 30px;
-  height: 30px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
 }
-
-#airportSection .toggleBtnWrap button:last-child {
-  right: 0;
-}
-
 
 #trafficSection {
   padding: 0 30px;
