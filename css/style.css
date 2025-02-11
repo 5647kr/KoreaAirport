@@ -57,6 +57,159 @@ header [class^="headerWrap"] a img {
   vertical-align: top;
 }
 
+header .asideWrap {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+header .asideWrap aside {
+  width: 100%;
+  max-width: 430px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--main-color);
+}
+
+header .asideWrap aside .asideHeader {
+  width: 100%;
+  height: 80px;
+}
+
+header .asideWrap aside .asideHeader ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+header .asideWrap aside .asideHeader ul li:last-child {
+  padding-left: 30px;
+}
+
+header .asideWrap aside .asideHeader ul li:last-child img {
+  height: 16px;
+}
+
+header .asideWrap aside .asideHeader img {
+  height: 24px;
+  vertical-align: top;
+}
+
+header .asideWrap aside .menu {
+  width: 100%;
+  height: calc(100% - 80px);
+}
+
+.asideWrap aside .menu .mainMenu {
+  padding: 60px 0;
+  position: relative;
+}
+
+.asideWrap aside .menu .mainMenu > li {
+  width: 100%;
+  height: 60px;
+}
+
+.asideWrap aside .menu .mainMenu .menuTitle {
+  width: 130px;
+  height: 60px;
+  position: absolute;
+  z-index: 10;
+}
+
+.asideWrap aside .menu .mainMenu .menuTitle a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-size: var(--font-mlz);
+  font-weight: var(--font-bw);
+  color: var(--whitebg-color);
+  text-align: center;
+  line-height: 60px;
+}
+
+.asideWrap aside .menu .mainMenu > li.active .menuTitle {
+  width: 160px;
+  background-color: var(--sub-color);
+  border-radius: 0 30px 30px 0;
+}
+
+.asideWrap aside .menu .mainMenu .subMenuWrap {
+  position: absolute;
+  top: 0;
+  left: 130px;
+  width: calc(100% - 130px);
+  height: calc(100vh - 80px);
+  background-color: var(--whitebg-color);
+  z-index: 1;
+  display: none;
+  border-radius: 30px 0 0 0;
+}
+
+.asideWrap aside .menu .mainMenu > li.active .subMenuWrap {
+  display: block;
+}
+
+.subMenuWrap .subMenu > li:first-child h3 {
+  border-radius: 30px 0 0 0;
+}
+
+.subMenuWrap .subMenu > li h3 {
+  width: 100%;
+  height: 60px;
+  padding-left: 50px;
+  background-color: var(--skybg-color);
+  border: 1px solid var(--main-color);
+  border-right: none;
+  border-left: none;
+  position: relative;
+}
+
+.subMenuWrap .subMenu > li h3 a {
+  line-height: 60px;
+  font-size: var(--font-mz);
+  font-weight: var(--font-bw);
+}
+
+.subMenuWrap .subMenu > li h3 button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.subMenuWrap .subMenu > li .noSubMenu {
+  border-bottom: none;
+}
+
+.subMenuWrap .subMenu .detailMenu {
+  padding-left: 80px;
+  border-right: none;
+  border-left: none;
+}
+
+.subMenuWrap .subMenu .detailMenu li {
+  height: 30px;
+  list-style: disc;
+}
+
+.subMenuWrap .subMenu .detailMenu li a {
+  font-size: var(--font-smz);
+  font-weight: var(--font-sbw);
+  line-height: 30px;
+}
+
+
+
 #introSection {
   height: 400px;
   position: relative;
