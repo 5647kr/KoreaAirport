@@ -1,0 +1,145 @@
+header {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+}
+
+.headerWrap {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 40px;
+}
+
+.headerWrap .logoWrap .logo img {
+  height: 33px;
+  vertical-align: top;
+}
+
+.headerWrap .menuWrap {
+  box-shadow: inset 0 0 10px red;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.headerWrap .menuWrap.active {
+  display: block;
+}
+
+.headerWrap .menuWrap .navigationWrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  max-width: 430px;
+  color: #ffffff;
+  background-color: var(--white-color);
+}
+
+.headerWrap .menuWrap .navigationWrap .navHeader {
+  width: 100%;
+  height: 80px;
+  background-color: var(--main-color);
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menuWrap .navigationWrap .navHeader button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuWrap .navigationWrap .navHeader button img {
+  height: 16px;
+}
+
+.menuWrap .navigationWrap .navContent {
+  box-shadow: inset 0 0 10px red;
+  width: 100%;
+  height: calc(100% - 80px);
+  padding-top: 60px;
+  background-color: var(--main-color);
+}
+
+.menuWrap .navigationWrap .navContent ul {
+  box-shadow: inset 0 0 10px red;
+  height: 100%;
+}
+
+.menuWrap .navigationWrap .navContent li {
+  box-shadow: inset 0 0 10px blue;
+  width: 130px;
+  height: 60px;
+}
+
+.menuWrap .navigationWrap .navContent a {
+  width: 100%;
+  height: 100%;
+  font-size: var(--font-mlz);
+  color: var(--bg-color);
+  text-align: center;
+  line-height: 60px;
+}
+
+.headerWrap .quickMenu {
+  width: 100%;
+  height: inherit;
+  padding: 0 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 태블릿 이후부터 flex-direction: row로 */
+.headerWrap .quickMenu ul {
+  height: inherit;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerWrap .quickMenu ul li {
+  width: 30px;
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.headerWrap .quickMenu ul li a {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerWrap .quickMenu ul li img {
+  height: 24px;
+  vertical-align: top;
+}
+
+.headerWrap img:nth-child(2) {
+  display: none;
+}
+
+/* 모바일 다른 이모티콘 숨기기 */
+.headerWrap .quickMenu ul li:nth-child(-n+3) {
+  display: none;
+}
