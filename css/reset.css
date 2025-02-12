@@ -12,9 +12,8 @@
   --main-color: #081F5C;
   --sub-color: #334EAC;
   --content-color: #7096D1;
-  --skybg-color: #E7F1FF;
-  --whitebg-color: #F9FCFF;
-  --white-color: #FFFFFF;
+  --bg-color: #E7F1FF;
+  --white-color: #F9FCFF;
 }
 
 * {
@@ -33,11 +32,13 @@ ul, li {
 
 a {
   text-decoration: none;
+  display: block;
 }
 
 button {
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .a11y-hidden {
