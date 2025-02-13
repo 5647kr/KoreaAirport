@@ -22,7 +22,6 @@ header {
 }
 
 .headerWrap .menuWrap {
-  box-shadow: inset 0 0 10px red;
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -70,31 +69,104 @@ header {
 }
 
 .menuWrap .navigationWrap .navContent {
-  box-shadow: inset 0 0 10px red;
   width: 100%;
   height: calc(100% - 80px);
   padding-top: 60px;
   background-color: var(--main-color);
 }
 
-.menuWrap .navigationWrap .navContent ul {
-  box-shadow: inset 0 0 10px red;
-  height: 100%;
-}
-
-.menuWrap .navigationWrap .navContent li {
-  box-shadow: inset 0 0 10px blue;
-  width: 130px;
+.menuWrap .navigationWrap .navContent ul > li {
+  width: 100%;
   height: 60px;
 }
 
-.menuWrap .navigationWrap .navContent a {
-  width: 100%;
+.menuWrap .navigationWrap .navContent li.active > .mainTitle {
+  position: relative;
+  width: 160px;
+  border-radius: 0 30px 30px 0;
+  z-index: 15;
+  background-color: var(--sub-color);
+}
+
+.menuWrap .navigationWrap .navContent .mainTitle {
+  width: 130px;
   height: 100%;
   font-size: var(--font-mlz);
   color: var(--bg-color);
   text-align: center;
   line-height: 60px;
+  background-color: var(--main-color);
+}
+
+.navigationWrap .navContent .subMenuWrap {
+  width: calc(100% - 130px);
+  height: calc(100vh - 80px);
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 80px;
+  background-color: var(--white-color);
+  border-radius: 30px 0 0 0;
+  z-index: 5;
+}
+
+.navigationWrap .navContent .subMenuWrap :where(h2, h3) {
+  display: none;
+}
+
+.navContent .subMenuWrap .subMenu {
+  height: fit-content;
+}
+
+.navigationWrap .navContent .subMenuWrap .subMenu > li {
+  height: 100%;
+}
+
+.navContent .subMenuWrap .subMenu li span {
+  width: 100%;
+  height: 60px;
+  padding: 0 20px 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--main-color);
+  border-left: none;
+  border-right: none;
+  background-color: var(--bg-color);
+}
+
+.navContent .subMenuWrap .subMenu li:first-child span {
+  border-radius: 30px 0 0 0;
+}
+
+.navContent .subMenuWrap .subMenu li span a {
+  font-size: var(--font-mz);
+  font-weight: var(--font-bw);
+}
+
+.navContent .subMenuWrap .subMenu li span button {
+  display: block;
+}
+
+.navContent .subMenuWrap .subMenu li span button img {
+  width: 16px;
+  aspect-ratio: 1 / 1;
+  vertical-align: top;
+}
+
+.navContent .subMenuWrap .subMenu .detailMenu > li {
+  height: 30px;
+  padding-left: 60px;
+  line-height: 30px;
+}
+
+.navContent .subMenuWrap .subMenu .detailMenu a {
+  font-size: var(--font-smz);
+}
+
+
+.navigationWrap .navContent li.active .subMenuWrap {
+  display: block;
 }
 
 .headerWrap .quickMenu {
