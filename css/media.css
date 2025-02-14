@@ -105,12 +105,12 @@
   .headerWrap .menuWrap .navContent .mainMenu {
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    padding: 0 160px;
   }
   
   .headerWrap .menuWrap .navContent .mainMenu > li {
-    width: 130px;
+    width: calc(100% / 4);
     height: 100%;
   }
   
@@ -124,14 +124,14 @@
   
   .headerWrap .menuWrap .navContent .mainMenu > li.active {
     background-color: transparent;
-    width: 130px;
+    width: calc(100% / 4);
     border-radius: 0;
   }
 
   .headerWrap .menuWrap .navContent .mainMenu > li.active .mainTitle {
     position: relative;
     background-color: transparent;
-    width: 130px;
+    width: 100%;
     border-radius: 0;
     z-index: 0;
   }
@@ -145,8 +145,11 @@
     z-index: 1;
     border-radius: 0;
     padding: 50px;
-    display: none;
     gap: 160px;
+  }
+
+  .headerWrap .menuWrap .navContent .mainMenu > li.active .subMenuWrap {
+    display: none;
   }
 
   .headerWrap .menuWrap .navContent .mainMenu > li:hover .subMenuWrap {
@@ -181,6 +184,9 @@
 
   .navContent .mainMenu .subMenuWrap .subMenu span {
     padding: 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
   }
 
   .navContent .mainMenu .subMenuWrap .subMenu span a {
