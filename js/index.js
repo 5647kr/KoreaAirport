@@ -40,6 +40,7 @@ class KoreaAirport {
       document.body.style.overflow = ""
     })
 
+
     // 메인 메뉴 선택, 세부 메뉴 열기
     this.mainMenu.forEach((menu) => {
       menu.addEventListener("click", () => {
@@ -121,34 +122,34 @@ class KoreaAirport {
 
     // pc ~ 4k header호버시 디자인 변경
     this.headerWrap.addEventListener("mouseenter", () => {
-      console.log("들어감")
-      this.headerWrap.style.backgroundColor = "#F9FCFF"
-      this.whiteIcon.forEach((icon) => {
-        icon.style.display = "none"
-      })
-      this.coloredIcon.forEach((icon) => {
-        icon.style.display = "block"
-      })
-      this.mainTitle.forEach((title) => {
-        title.style.color = "#081F5C"
-      })
+      if(window.innerWidth > 1024) {
+        this.headerWrap.style.backgroundColor = "#F9FCFF"
+        this.whiteIcon.forEach((icon) => {
+          icon.style.display = "none"
+        })
+        this.coloredIcon.forEach((icon) => {
+          icon.style.display = "block"
+        })
+        this.mainTitle.forEach((title) => {
+          title.style.color = "#081F5C"
+        })
+      }
+      console.log(window.innerWidth)
     })
     this.headerWrap.addEventListener("mouseleave", () => {
-      console.log("나옴")
-      this.headerWrap.style.backgroundColor = "transparent"
-      this.whiteIcon.forEach((icon) => {
-        icon.style.display = "block"
-      })
-      this.coloredIcon.forEach((icon) => {
-        icon.style.display = "none"
-      })
-      this.mainTitle.forEach((title) => {
-        title.style.color = "#F9FCFF"
-      })
+      if(window.innerWidth > 1024) {
+        this.headerWrap.style.backgroundColor = "transparent"
+        this.whiteIcon.forEach((icon) => {
+          icon.style.display = "block"
+        })
+        this.coloredIcon.forEach((icon) => {
+          icon.style.display = "none"
+        })
+        this.mainTitle.forEach((title) => {
+          title.style.color = "#F9FCFF"
+        })
+      }
     })
-
-
-
   }
 }
 
