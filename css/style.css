@@ -3,12 +3,13 @@ header {
   height: 80px;
   position: fixed;
   top: 0;
+  z-index: 999;
 }
 
 .headerWrap {
   width: 100%;
   height: 100%;
-  background-color: var(--main-color);
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +67,7 @@ header {
   line-height: 60px;
   font-size: var(--font-mlz);
   font-weight: var(--font-bw);
-  color: white;
+  color: var(--white-color);
 }
 
 .headerWrap .menuWrap .navContent .mainMenu > li.active .mainTitle {
@@ -199,4 +200,11 @@ header {
 /* 모바일 다른 이모티콘 숨기기 */
 .headerWrap .quickMenu ul li:nth-child(-n+3) {
   display: none;
+}
+
+#introSection img {
+  width: 100%;
+  height: 400px;
+  vertical-align: top;
+  object-fit: cover;
 }

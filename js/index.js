@@ -1,29 +1,43 @@
 class KoreaAirport {
   constructor() {
     const header = document.querySelector("header");
+    this.headerWrap = header.querySelector(".headerWrap")
     this.menu = header.querySelector(".menuWrap");
     this.mainMenu = header.querySelectorAll(".mainMenu > li");
+    this.mainTitle = header.querySelectorAll(".mainMenu .mainTitle");
     this.menuBg = header.querySelector(".menuBg");
     this.menuBtn = header.querySelector(".quickMenu li:last-child button");
     this.menuCloseBtn = header.querySelector(".menuWrap .menuCloseBtn");
     this.detailMenuBtn = header.querySelectorAll(".subMenu span > button");
-    this.detailMenu = header.querySelectorAll(".detailMenu")
+    this.detailMenu = header.querySelectorAll(".detailMenu");
+
+    this.whiteIcon = header.querySelectorAll(".whiteImg");
+    this.coloredIcon = header.querySelectorAll(".coloredImg");
   }
 
   pageEvent() {
-    this.openMenu();
+    this.headerEvent();
   }
 
-  openMenu() {
-    // 모바일 ~ 노트북
+  headerEvent() {
+    // 모바일 ~ 노트북 메뉴창 열기기
     this.menuBtn.addEventListener("click", () => {
       this.menuBg.style.display = "block";
       this.menu.classList.add("active");
-    })
+      document.body.style.overflow = "hidden";
 
+      if(window.scrollY > 0) {
+        this.mainTitle.forEach((title) => {
+          title.style.color = "#F9FCFF";
+        })
+        this.menuCloseBtn.children[0].style.display = "block";
+      }
+    })
+    
     this.menuCloseBtn.addEventListener("click", () => {
       this.menuBg.style.display = "none";
       this.menu.classList.remove("active");
+      document.body.style.overflow = ""
     })
 
     // 메인 메뉴 선택, 세부 메뉴 열기
@@ -66,7 +80,7 @@ class KoreaAirport {
     });
     
 
-    // pc ~ 4k
+    // pc ~ 4k 상세메뉴 열기기
     this.mainMenu.forEach((menu) => {
       menu.addEventListener("mouseover", () => {
         this.menuBg.style.display = "block"
@@ -76,6 +90,65 @@ class KoreaAirport {
         this.menuBg.style.display = "none"
       })
     })
+
+    // 스크롤시 헤더디자인 변경
+    window.addEventListener("scroll", () => {
+      if(window.scrollY > 0) {
+        this.headerWrap.style.backgroundColor = "#F9FCFF"
+        this.whiteIcon.forEach((icon) => {
+          icon.style.display = "none";
+        })
+        this.coloredIcon.forEach((icon) => {
+          icon.style.display = "block"
+        })
+        this.mainTitle.forEach((title) => {
+          title.style.color = "#081F5C"
+        })
+      } else {
+        this.headerWrap.style.backgroundColor = "transparent"
+        this.whiteIcon.forEach((icon) => {
+          icon.style.display = "block";
+        })
+        this.coloredIcon.forEach((icon) => {
+          icon.style.display = "none"
+        })
+        this.mainTitle.forEach((title) => {
+          title.style.color = "#F9FCFF"
+        })
+      }
+    })
+
+
+    // pc ~ 4k header호버시 디자인 변경
+    this.headerWrap.addEventListener("mouseenter", () => {
+      console.log("들어감")
+      this.headerWrap.style.backgroundColor = "#F9FCFF"
+      this.whiteIcon.forEach((icon) => {
+        icon.style.display = "none"
+      })
+      this.coloredIcon.forEach((icon) => {
+        icon.style.display = "block"
+      })
+      this.mainTitle.forEach((title) => {
+        title.style.color = "#081F5C"
+      })
+    })
+    this.headerWrap.addEventListener("mouseleave", () => {
+      console.log("나옴")
+      this.headerWrap.style.backgroundColor = "transparent"
+      this.whiteIcon.forEach((icon) => {
+        icon.style.display = "block"
+      })
+      this.coloredIcon.forEach((icon) => {
+        icon.style.display = "none"
+      })
+      this.mainTitle.forEach((title) => {
+        title.style.color = "#F9FCFF"
+      })
+    })
+
+
+
   }
 }
 
