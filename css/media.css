@@ -38,6 +38,10 @@
   .headerWrap .quickMenu ul li:nth-child(-n+3) {
     display: flex;
   }
+
+  #introSection {
+    height: 470px;
+  }
 }
 
 /* 노트북 미디어쿼리 */
@@ -72,6 +76,10 @@
   /* 모바일 다른 이모티콘 숨기기 */
   .headerWrap .quickMenu ul li:nth-child(-n+3) {
     display: flex;
+  }
+
+  #introSection {
+    height: 700px;
   }
 }
 
@@ -233,6 +241,10 @@
   /* 모바일 다른 이모티콘 숨기기 */
   .headerWrap .quickMenu ul li:nth-child(-n+3) {
     display: flex;
+  }
+
+  #introSection {
+    height: 100vh;
   }
 }
 
