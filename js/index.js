@@ -13,10 +13,16 @@ class KoreaAirport {
 
     this.whiteIcon = header.querySelectorAll(".whiteImg");
     this.coloredIcon = header.querySelectorAll(".coloredImg");
+
+
+    const main = document.querySelector("main");
+    this.introSection = main.querySelector("#introSection");
+    this.introNoticeList = main.querySelector("#introSection .noticeList")
   }
 
   pageEvent() {
     this.headerEvent();
+    this.introNoticeEvent();
   }
 
   headerEvent() {
@@ -119,7 +125,6 @@ class KoreaAirport {
       }
     })
 
-
     // pc ~ 4k header호버시 디자인 변경
     this.headerWrap.addEventListener("mouseenter", () => {
       if(window.innerWidth > 1024) {
@@ -134,7 +139,6 @@ class KoreaAirport {
           title.style.color = "#081F5C"
         })
       }
-      console.log(window.innerWidth)
     })
     this.headerWrap.addEventListener("mouseleave", () => {
       if(window.innerWidth > 1024) {
@@ -150,6 +154,24 @@ class KoreaAirport {
         })
       }
     })
+  }
+
+  introNoticeEvent() {
+    // 안내문 애니메이션
+    setInterval(() => {
+      const firstLi = this.introNoticeList.querySelector("li");
+      const animation = firstLi.animate([
+        {marginTop: "-40px"}
+      ], {
+        duration: 2000,
+        easing: "linear"
+      })
+  
+      animation.onfinish = () => {
+        this.introNoticeList.append(firstLi);
+      }
+    }, 4000)
+
   }
 }
 
