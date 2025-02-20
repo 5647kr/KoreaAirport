@@ -81,6 +81,15 @@
   #introSection {
     height: 700px;
   }
+
+  #introSection .alertWrap .notice {
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  #introSection .alertWrap .notice strong {
+    display: block;
+  }
 }
 
 /* pc ~ 4k 미디어쿼리 */
@@ -245,6 +254,20 @@
 
   #introSection {
     height: 100vh;
+  }
+
+  #introSection .alertWrap .notice {
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  #introSection .alertWrap .notice strong {
+    display: block;
+    font-size: var(--font-mz);
+  }
+  
+  #introSection .alertWrap .noticeList a {
+    font-size: var(--font-mz);
   }
 }
 
