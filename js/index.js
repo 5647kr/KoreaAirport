@@ -23,6 +23,7 @@ class KoreaAirport {
   pageEvent() {
     this.headerEvent();
     this.introNoticeEvent();
+    this.mainImgFadeEvent();
   }
 
   headerEvent() {
@@ -102,6 +103,7 @@ class KoreaAirport {
     window.addEventListener("scroll", () => {
       if(window.scrollY > 0) {
         this.headerWrap.style.backgroundColor = "#F9FCFF"
+        this.headerWrap.style.boxShadow = "0 4px 4px rgba(0, 0, 0, 0.25)"
         this.whiteIcon.forEach((icon) => {
           icon.style.display = "none";
         })
@@ -113,6 +115,7 @@ class KoreaAirport {
         })
       } else {
         this.headerWrap.style.backgroundColor = "transparent"
+        this.headerWrap.style.boxShadow = "none"
         this.whiteIcon.forEach((icon) => {
           icon.style.display = "block";
         })
@@ -124,40 +127,32 @@ class KoreaAirport {
         })
       }
     })
-
-    // pc ~ 4k header호버시 디자인 변경
-    this.headerWrap.addEventListener("mouseenter", () => {
-      if(window.innerWidth > 1024) {
-        this.headerWrap.style.backgroundColor = "#F9FCFF"
-        this.whiteIcon.forEach((icon) => {
-          icon.style.display = "none"
-        })
-        this.coloredIcon.forEach((icon) => {
-          icon.style.display = "block"
-        })
-        this.mainTitle.forEach((title) => {
-          title.style.color = "#081F5C"
-        })
-      }
-    })
-    this.headerWrap.addEventListener("mouseleave", () => {
-      if(window.innerWidth > 1024) {
-        this.headerWrap.style.backgroundColor = "transparent"
-        this.whiteIcon.forEach((icon) => {
-          icon.style.display = "block"
-        })
-        this.coloredIcon.forEach((icon) => {
-          icon.style.display = "none"
-        })
-        this.mainTitle.forEach((title) => {
-          title.style.color = "#F9FCFF"
-        })
-      }
-    })
   }
 
+  mainImgFadeEvent() {
+    const items = document.querySelectorAll('#introSection .imgWrap li');
+    let currentIndex = 0;
+
+    // 첫 번째 이미지를 바로 보이게 설정
+    items[currentIndex].style.opacity = 1; // 첫 번째 이미지를 보이게 함
+
+    function showNextImage() {
+        // 현재 이미지 fade out
+        items[currentIndex].style.animationName = 'fadeOut';
+        
+        // 다음 이미지 인덱스 계산
+        currentIndex = (currentIndex + 1) % items.length;
+
+        // 다음 이미지 fade in
+        items[currentIndex].style.animationName = 'fadeIn';
+    }
+
+    // 3초마다 showNextImage 함수 호출
+    setInterval(showNextImage, 4000);
+  }
+
+  // 안내문 애니메이션
   introNoticeEvent() {
-    // 안내문 애니메이션
     setInterval(() => {
       const firstLi = this.introNoticeList.querySelector("li");
       const animation = firstLi.animate([
@@ -171,7 +166,6 @@ class KoreaAirport {
         this.introNoticeList.append(firstLi);
       }
     }, 4000)
-
   }
 }
 

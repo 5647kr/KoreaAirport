@@ -97,6 +97,26 @@
   .headerWrap {
     justify-content: space-between;
   }
+
+  .headerWrap:hover {
+    background-color: var(--white-color);
+  }
+
+  .headerWrap .whiteImg {
+    display: block;
+  }
+
+  .headerWrap:hover .whiteImg {
+    display: none;
+  }
+
+  .headerWrap .coloredImg {
+    display: none;
+  }
+
+  .headerWrap:hover .coloredImg {
+    display: block;
+  }
   
   .headerWrap .logoWrap .logo img {
     height: 47px;
@@ -137,6 +157,11 @@
     line-height: 100px;
     font-size: var(--font-mlz);
     font-weight: var(--font-bw);
+    color: var(--white-color);
+  }
+
+  .headerWrap:hover .menuWrap .navContent .mainMenu .mainTitle {
+    color: var(--main-color);
   }
   
   .headerWrap .menuWrap .navContent .mainMenu > li.active {
@@ -219,6 +244,31 @@
   .navContent .mainMenu .subMenuWrap .detailMenu {
     padding-left: 0;
     display: block;
+  }
+
+  .navContent .mainMenu .subMenuWrap .detailMenu a {
+    position: relative;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .navContent .mainMenu .subMenuWrap .detailMenu a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--main-color);
+    transition: width 0.3s ease;
+  }
+  
+  .navContent .mainMenu .subMenuWrap .detailMenu a:hover::before {
+    width: 100%;
+  }
+  
+  .navContent .mainMenu .subMenuWrap .detailMenu a:hover {
+    color: var(--main-color);
   }
 
   .headerWrap .menuBg {
