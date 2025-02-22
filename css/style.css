@@ -17,6 +17,27 @@ header {
   padding: 0 40px;
 }
 
+.headerWrap.scrolled {
+  background-color: var(--white-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.headerWrap .whiteImg {
+  display: block;
+}
+
+.headerWrap .coloredImg {
+  display: none;
+}
+
+.headerWrap.scrolled .whiteImg {
+  display: none;
+}
+
+.headerWrap.scrolled .coloredImg {
+  display: block;
+}
+
 .headerWrap .logoWrap .logo img {
   height: 33px;
   vertical-align: top;
@@ -67,6 +88,10 @@ header {
   line-height: 60px;
   font-size: var(--font-mlz);
   font-weight: var(--font-bw);
+  color: var(--white-color);
+}
+
+.headerWrap.scrolled .menuWrap .navContent .mainMenu .mainTitle {
   color: var(--white-color);
 }
 
@@ -144,7 +169,6 @@ header {
   line-height: 30px;
 }
 
-
 .headerWrap .menuBg {
   position: absolute;
   width: 100%;
@@ -153,6 +177,10 @@ header {
   top: 0;
   left: 0;
   display: none;
+}
+
+.headerWrap .menuBg.hovered {
+  display: block;
 }
 
 .headerWrap .quickMenu {
@@ -202,9 +230,12 @@ header {
   display: none;
 }
 
+section {
+  height: 400px;
+}
+
 #introSection {
   width: 100%;
-  height: 400px;
   position: relative;
 }
 

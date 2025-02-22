@@ -39,9 +39,10 @@
     display: flex;
   }
 
-  #introSection {
+  section {
     height: 470px;
   }
+
 }
 
 /* 노트북 미디어쿼리 */
@@ -78,7 +79,7 @@
     display: flex;
   }
 
-  #introSection {
+  section {
     height: 700px;
   }
 
@@ -100,17 +101,10 @@
 
   .headerWrap:hover {
     background-color: var(--white-color);
-  }
-
-  .headerWrap .whiteImg {
-    display: block;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
 
   .headerWrap:hover .whiteImg {
-    display: none;
-  }
-
-  .headerWrap .coloredImg {
     display: none;
   }
 
@@ -163,6 +157,10 @@
   .headerWrap:hover .menuWrap .navContent .mainMenu .mainTitle {
     color: var(--main-color);
   }
+
+  .headerWrap.scrolled .menuWrap .navContent .mainMenu .mainTitle {
+    color: var(--main-color);
+  }
   
   .headerWrap .menuWrap .navContent .mainMenu > li.active {
     background-color: transparent;
@@ -196,6 +194,7 @@
 
   .headerWrap .menuWrap .navContent .mainMenu > li:hover .subMenuWrap {
     display: flex;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.5);
   }
 
   .navContent .mainMenu .subMenuWrap .titleWrap {
@@ -276,7 +275,6 @@
     top: 100px;
   }
 
-
   .headerWrap .quickMenu {
     width: fit-content;
     padding: 0;
@@ -301,8 +299,8 @@
   .headerWrap .quickMenu ul li:nth-child(-n+3) {
     display: flex;
   }
-
-  #introSection {
+  
+  section {
     height: 100vh;
   }
 
@@ -319,9 +317,4 @@
   #introSection .alertWrap .noticeList a {
     font-size: var(--font-mz);
   }
-}
-
-/* 4k 미디어쿼리 */
-@media screen and (min-width: 1441px) and (max-width: 2560px) {
-
 }
