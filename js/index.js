@@ -32,13 +32,6 @@ class KoreaAirport {
       this.menuBg.style.display = "block";
       this.menu.classList.add("active");
       document.body.style.overflow = "hidden";
-
-      if(window.scrollY > 0) {
-        this.mainTitle.forEach((title) => {
-          title.style.color = "#F9FCFF";
-        })
-        this.menuCloseBtn.children[0].style.display = "block";
-      }
     })
     
     this.menuCloseBtn.addEventListener("click", () => {
@@ -88,43 +81,23 @@ class KoreaAirport {
     });
     
 
-    // pc ~ 4k 상세메뉴 열기기
+    // pc ~ 4k menuBg 열기기
     this.mainMenu.forEach((menu) => {
       menu.addEventListener("mouseover", () => {
-        this.menuBg.style.display = "block"
+        this.menuBg.classList.add("hovered")
       })
 
       menu.addEventListener("mouseleave", () => {
-        this.menuBg.style.display = "none"
+        this.menuBg.classList.remove("hovered")
       })
     })
 
     // 스크롤시 헤더디자인 변경
     window.addEventListener("scroll", () => {
       if(window.scrollY > 0) {
-        this.headerWrap.style.backgroundColor = "#F9FCFF"
-        this.headerWrap.style.boxShadow = "0 4px 4px rgba(0, 0, 0, 0.25)"
-        this.whiteIcon.forEach((icon) => {
-          icon.style.display = "none";
-        })
-        this.coloredIcon.forEach((icon) => {
-          icon.style.display = "block"
-        })
-        this.mainTitle.forEach((title) => {
-          title.style.color = "#081F5C"
-        })
+        this.headerWrap.classList.add("scrolled")
       } else {
-        this.headerWrap.style.backgroundColor = "transparent"
-        this.headerWrap.style.boxShadow = "none"
-        this.whiteIcon.forEach((icon) => {
-          icon.style.display = "block";
-        })
-        this.coloredIcon.forEach((icon) => {
-          icon.style.display = "none"
-        })
-        this.mainTitle.forEach((title) => {
-          title.style.color = "#F9FCFF"
-        })
+        this.headerWrap.classList.remove("scrolled")
       }
     })
   }
