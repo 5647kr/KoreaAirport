@@ -230,12 +230,30 @@ header {
   display: none;
 }
 
-section {
-  height: 400px;
+main section {
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+section .sectionTitle {
+  text-align: center;
+  font-weight: var(--font-sbw);
+  margin-bottom: 40px;
+}
+
+section .sectionTitle > h2 {
+  font-size: 40px;
+}
+
+section .sectionTitle > h3 {
+  font-size: var(--font-lz);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 #introSection {
   width: 100%;
+  height: 400px;
   position: relative;
 }
 
@@ -327,4 +345,82 @@ section {
   font-size: var(--font-smz);
   font-weight: var(--font-mw);
   color: var(--white-color);
+}
+
+#airportSection {
+  overflow: hidden;
+}
+
+/* 노트북 이후부터 width: 100% */
+#airportSection .guideList {
+  width: 300%;
+  display: flex;
+}
+
+/* 노트북 이후부터 padding, bg 없음 */
+#airportSection .guideList > li {
+  width: calc(100% / 3);
+  padding: 0 30px;
+  background: url("../img/photo/service-bgImg.jpg") no-repeat 100% 100% / cover;
+}
+
+#airportSection .guideList article {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--main-color);
+}
+
+#airportSection .guideList .arrive-service {
+  background-color: var(--sub-color);
+}
+
+#airportSection .guideList .departure-service {
+  background-color: var(--content-color);
+}
+
+#airportSection .guideList article :where(h3, h4) {
+  color: var(--white-color);
+  font-size: 30px;
+  font-weight: var(--font-sbw);
+}
+
+#airportSection .guideList article h4 {
+  font-size: var(--font-lz);
+}
+
+#airportSection .guideList article ul {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 40px;
+}
+
+#airportSection .guideList article a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#airportSection .guideList article img {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1 / 1;
+  vertical-align: top;
+}
+
+#airportSection .guideList article ul p {
+  color: var(--white-color);
+}
+
+#airportSection .guideWrap {
+  position: relative;
+}
+
+#airportSection .guideWrap .toggleBtnWrap {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
 }
