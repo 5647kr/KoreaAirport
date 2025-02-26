@@ -1,0 +1,521 @@
+header {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.headerWrap {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 40px;
+}
+
+.headerWrap.scrolled {
+  background-color: var(--white-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.headerWrap .whiteImg {
+  display: block;
+}
+
+.headerWrap .coloredImg {
+  display: none;
+}
+
+.headerWrap.scrolled .whiteImg {
+  display: none;
+}
+
+.headerWrap.scrolled .coloredImg {
+  display: block;
+}
+
+.headerWrap .logoWrap .logo img {
+  height: 33px;
+  vertical-align: top;
+}
+
+.headerWrap .menuWrap {
+  position: fixed;
+  width: 100%;
+  max-width: 430px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  display: none;
+  z-index: 5;
+  background-color: var(--main-color);
+}
+
+.headerWrap .menuWrap.active {
+  display: block;
+}
+
+.headerWrap .menuWrap .navHeader {
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.headerWrap .menuWrap .navHeader img {
+  height: 16px;
+  vertical-align: top;
+}
+
+.headerWrap .menuWrap .navContent {
+  height: calc(100% - 80px);
+  padding-top: 60px;
+}
+
+.headerWrap .menuWrap .navContent .mainMenu > li {
+  width: 130px;
+  height: 60px;
+}
+
+.headerWrap .menuWrap .navContent .mainMenu .mainTitle {
+  text-align: center;
+  line-height: 60px;
+  font-size: var(--font-mlz);
+  font-weight: var(--font-bw);
+  color: var(--white-color);
+}
+
+.headerWrap.scrolled .menuWrap .navContent .mainMenu .mainTitle {
+  color: var(--white-color);
+}
+
+.headerWrap .menuWrap .navContent .mainMenu > li.active .mainTitle {
+  position: relative;
+  background-color: var(--sub-color);
+  width: 160px;
+  border-radius: 0 30px 30px 0;
+  z-index: 15;
+}
+
+.headerWrap .menuWrap .navContent .mainMenu > li.active {
+  width: 160px;
+}
+
+.headerWrap .menuWrap .navContent .mainMenu .subMenuWrap {
+  position: absolute;
+  top: 80px;
+  left: 130px;
+  width: calc(100% - 130px);
+  height: calc(100vh - 60px);
+  background-color: var(--white-color);
+  z-index: 1;
+  border-radius: 30px 0 0 0;
+  overflow-y: auto;
+  display: none;
+}
+
+.headerWrap .menuWrap .navContent .mainMenu > li.active .subMenuWrap {
+  display: block;
+}
+
+.navContent .mainMenu .subMenuWrap .titleWrap {
+  display: none;
+}
+
+.navContent .mainMenu .subMenuWrap .subMenu span {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 50px;
+  border: 1px solid var(--main-color);
+  border-right: none;
+  border-left: none;
+  margin-bottom: 10px;
+  background-color: var(--bg-color);
+}
+
+.navContent .mainMenu .subMenuWrap .subMenu > li:first-child span {
+  border-radius: 30px 0 0 0;
+}
+
+.navContent .mainMenu .subMenuWrap .subMenu button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navContent .mainMenu .subMenuWrap .subMenu a {
+  color: var(--main-color);
+}
+
+.navContent .mainMenu .subMenuWrap .detailMenu {
+  padding-left: 60px;
+  display: none;
+}
+
+.navContent .mainMenu .subMenuWrap .detailMenu li {
+  width: 100%;
+  height: 30px;
+}
+
+.navContent .mainMenu .subMenuWrap .detailMenu a {
+  line-height: 30px;
+}
+
+.headerWrap .menuBg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.headerWrap .menuBg.hovered {
+  display: block;
+}
+
+.headerWrap .quickMenu {
+  width: 100%;
+  height: inherit;
+  padding: 0 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 태블릿 이후부터 flex-direction: row로 */
+.headerWrap .quickMenu ul {
+  height: inherit;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerWrap .quickMenu ul li {
+  width: 30px;
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.headerWrap .quickMenu ul li a {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerWrap .quickMenu ul li img {
+  height: 24px;
+  vertical-align: top;
+}
+
+.headerWrap img:nth-child(2) {
+  display: none;
+}
+
+/* 모바일 다른 이모티콘 숨기기 */
+.headerWrap .quickMenu ul li:nth-child(-n+3) {
+  display: none;
+}
+
+
+/* 공통 미디어쿼리 */
+@media screen and (min-width: 426px) {
+  header {
+    height: 100px;
+  }
+}
+
+
+/* 태블릿 미디어쿼리 */
+@media screen and (min-width: 426px) and (max-width: 768px) {  
+  .headerWrap {
+    justify-content: space-between;
+  }
+  
+  .headerWrap .logoWrap .logo img {
+    height: 41px;
+  }
+  
+  .headerWrap .quickMenu {
+    width: fit-content;
+    padding: 0;
+    position: static;
+  }
+
+  .headerWrap .quickMenu ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .headerWrap .quickMenu ul li:last-child {
+    margin-left: 40px;
+  }
+
+  .headerWrap .quickMenu ul li img {
+    height: 30px;
+  }
+
+  /* 모바일 다른 이모티콘 숨기기 */
+  .headerWrap .quickMenu ul li:nth-child(-n+3) {
+    display: flex;
+  }
+}
+
+
+/* 노트북 미디어쿼리 */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .headerWrap {
+    justify-content: space-between;
+  }
+  
+  .headerWrap .logoWrap .logo img {
+    height: 41px;
+  }
+  
+  .headerWrap .quickMenu {
+    width: fit-content;
+    padding: 0;
+    position: static;
+  }
+
+  .headerWrap .quickMenu ul {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .headerWrap .quickMenu ul li:last-child {
+    margin-left: 30px;
+  }
+
+  .headerWrap .quickMenu ul li img {
+    height: 30px;
+  }
+
+  /* 모바일 다른 이모티콘 숨기기 */
+  .headerWrap .quickMenu ul li:nth-child(-n+3) {
+    display: flex;
+  }
+}
+
+
+
+/* pc ~ 4k 미디어쿼리 */
+@media screen and (min-width: 1025px) {
+  .headerWrap {
+    justify-content: space-between;
+  }
+
+  .headerWrap:hover {
+    background-color: var(--white-color);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .headerWrap:hover .whiteImg {
+    display: none;
+  }
+
+  .headerWrap:hover .coloredImg {
+    display: block;
+  }
+  
+  .headerWrap .logoWrap .logo img {
+    height: 47px;
+  }
+  
+  .headerWrap .menuWrap {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    position: static;
+    background-color: transparent;
+  }
+
+  .headerWrap .menuWrap .navHeader {
+    display: none;
+  }
+
+  .headerWrap .menuWrap .navContent {
+    height: 100%;
+    padding-top: 0;
+  }
+
+  .headerWrap .menuWrap .navContent .mainMenu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 160px;
+  }
+  
+  .headerWrap .menuWrap .navContent .mainMenu > li {
+    width: calc(100% / 4);
+    height: 100%;
+  }
+  
+  .headerWrap .menuWrap .navContent .mainMenu .mainTitle {
+    height: 100%;
+    text-align: center;
+    line-height: 100px;
+    font-size: var(--font-mlz);
+    font-weight: var(--font-bw);
+    color: var(--white-color);
+  }
+
+  .headerWrap:hover .menuWrap .navContent .mainMenu .mainTitle {
+    color: var(--main-color);
+  }
+
+  .headerWrap.scrolled .menuWrap .navContent .mainMenu .mainTitle {
+    color: var(--main-color);
+  }
+  
+  .headerWrap .menuWrap .navContent .mainMenu > li.active {
+    background-color: transparent;
+    width: calc(100% / 4);
+    border-radius: 0;
+  }
+
+  .headerWrap .menuWrap .navContent .mainMenu > li.active .mainTitle {
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    border-radius: 0;
+    z-index: 0;
+  }
+
+  .headerWrap .menuWrap .navContent .mainMenu .subMenuWrap {
+    width: 100%;
+    height: auto;
+    top: 100px;
+    left: 0;
+    background-color: var(--white-color);
+    z-index: 1;
+    border-radius: 0;
+    padding: 50px;
+    gap: 160px;
+  }
+
+  .headerWrap .menuWrap .navContent .mainMenu > li.active .subMenuWrap {
+    display: none;
+  }
+
+  .headerWrap .menuWrap .navContent .mainMenu > li:hover .subMenuWrap {
+    display: flex;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .navContent .mainMenu .subMenuWrap .titleWrap {
+    display: block;
+  }
+
+  .navContent .mainMenu .subMenuWrap .titleWrap :where(h2, h3) {
+    font-weight: var(--font-bw);
+  }
+
+  .navContent .mainMenu .subMenuWrap .titleWrap h2 {
+    font-size: 50px;
+  }
+
+  .navContent .mainMenu .subMenuWrap .titleWrap h3 {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .navContent .mainMenu .subMenuWrap .subMenu {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .navContent .mainMenu .subMenuWrap .subMenu > li {
+    width: 100%;
+  }
+
+  .navContent .mainMenu .subMenuWrap .subMenu span {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  .navContent .mainMenu .subMenuWrap .subMenu span a {
+    height: 100%;
+    line-height: 60px;
+    font-size: var(--font-mlz);
+  }
+
+  .navContent .mainMenu .subMenuWrap .subMenu span button {
+    display: none;
+  }
+
+  .navContent .mainMenu .subMenuWrap .detailMenu {
+    padding-left: 0;
+    display: block;
+  }
+
+  .navContent .mainMenu .subMenuWrap .detailMenu a {
+    position: relative;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .navContent .mainMenu .subMenuWrap .detailMenu a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--main-color);
+    transition: width 0.3s ease;
+  }
+  
+  .navContent .mainMenu .subMenuWrap .detailMenu a:hover::before {
+    width: 100%;
+  }
+  
+  .navContent .mainMenu .subMenuWrap .detailMenu a:hover {
+    color: var(--main-color);
+  }
+
+  .headerWrap .menuBg {
+    height: calc(100vh - 100px);
+    top: 100px;
+  }
+
+  .headerWrap .quickMenu {
+    width: fit-content;
+    padding: 0;
+    position: static;
+  }
+
+  .headerWrap .quickMenu ul {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .headerWrap .quickMenu ul li:last-child {
+    margin-left: 0;
+    display: none;
+  }
+
+  .headerWrap .quickMenu ul li img {
+    height: 34px;
+  }
+
+  /* 모바일 다른 이모티콘 숨기기 */
+  .headerWrap .quickMenu ul li:nth-child(-n+3) {
+    display: flex;
+  }
+}
