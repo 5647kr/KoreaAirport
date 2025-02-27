@@ -36,6 +36,8 @@
   #introSection {
     height: 470px;
   }
+
+  /* airportSection 동일 */
 }
 
 
@@ -43,6 +45,19 @@
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   #introSection {
     height: 700px;
+  }
+  
+  #airportSection .guideList {
+    width: 100%;
+  }
+  
+  #airportSection .guideList > li {
+    padding: 0;
+    background: none;
+  }
+  
+  #airportSection .guideWrap .toggleBtnWrap {
+    display: none;
   }
 }
 
@@ -64,6 +79,8 @@
   section:not(:first-child) {
     height: calc(100vh - 100px);
     padding: 80px 0;
+    display: flex;
+    flex-direction: column;
   }
 
   main section:nth-child(3), main section:nth-child(5) {
@@ -72,5 +89,64 @@
 
   #introSection {
     height: 100vh;
+  }
+
+  #airportSection {
+    padding-bottom: 0;
+  }
+
+  #airportSection .guideWrap {
+    flex-grow: 1;
+  }
+
+  #airportSection .guideList {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #airportSection .guideList > li {
+    width: calc(100% / 3);
+    padding: 0;
+    background: none;
+  }
+  
+  #airportSection .guideList article {
+    height: 100%;
+    padding: 50px;
+  }
+  
+  #airportSection .guideList article :where(h3, h4) {
+    font-size: 50px;
+  }
+  
+  #airportSection .guideList article h4 {
+    font-size: 30px;
+  }
+  
+  #airportSection .guideList article ul {
+    margin-top: 60px;
+  }
+
+  #airportSection .guideList article a {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #airportSection .guideList article img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.5s ease;
+  }
+
+  #airportSection .guideList article li:hover img {
+    transform: rotateY(180deg);
+  }
+  
+  #airportSection .guideList article ul p {
+    font-size: var(--font-mlz);
+  }
+
+  #airportSection .guideWrap .toggleBtnWrap {
+    display: none;
   }
 }

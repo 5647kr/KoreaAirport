@@ -179,6 +179,7 @@ section .sectionTitle h3 {
 
 #airportSection .guideList article ul p {
   color: var(--white-color);
+  margin-top: 4px;
 }
 
 #airportSection .guideWrap {
