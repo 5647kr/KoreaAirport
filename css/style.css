@@ -194,3 +194,96 @@ section .sectionTitle h3 {
   display: flex;
   justify-content: space-between;
 }
+
+#trafficSection .trafficInfoWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#trafficSection .busStateWrap h4 {
+  font-weight: var(--font-sbw);
+  margin-bottom: 10px;
+}
+
+#trafficSection .busStateWrap .busState {
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+/* 
+pc 이상부터 그리드 적용
+#trafficSection .busStateWrap .busState ul {
+  display: grid;
+} */
+
+#trafficSection .busStateWrap .busState li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+#trafficSection .busStateWrap .busState .busTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+#trafficSection .busState .busTitle :where(strong, p) {
+  font-weight: var(--font-sbw);
+}
+
+#trafficSection .busState .busTitle p {
+  font-size: var(--font-sz);
+}
+
+#trafficSection .busStateWrap .busState .progress {
+  width: 100%;
+  height: 10px;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+}
+
+#trafficSection .busStateWrap .busState .progressing {
+  width: 90%;
+  height: 10px;
+  border-radius: 20px;
+  background-color: #DC143C;
+}
+
+#trafficSection .busState .trafficNotice {
+  padding: 30px 0;
+  border-top: 1px solid var(--main-color);
+  margin-top: 30px;
+}
+
+#trafficSection .busState .trafficNotice li {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+#trafficSection .trafficWrap ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+
+#trafficSection .trafficWrap li {
+  aspect-ratio: 1 / 1;
+  padding: 10px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  position: relative;
+}
+
+#trafficSection .trafficWrap li a {
+  width: 100%;
+  height: 100%;
+}
+
+#trafficSection .trafficWrap li img {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  aspect-ratio: 1 / 1;
+}
