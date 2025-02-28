@@ -1,15 +1,7 @@
 /* 공통 미디어쿼리 */
 @media screen and (min-width: 426px) {
-  main section:nth-child(3), main section:nth-child(5) {
-    padding: 0 50px;
-  }
-
   main section:nth-child(odd) .sectionTitle {
     text-align: left;
-  }
-
-  main section:nth-child(even) .sectionTitle {
-    padding-right: 50px;
   }
 
   section .sectionTitle {
@@ -33,16 +25,50 @@
 
 /* 태블릿 미디어쿼리 */
 @media screen and (min-width: 426px) and (max-width: 768px) {
+  main section:nth-child(even) .sectionTitle {
+    padding-right: 30px;
+  }
+
   #introSection {
     height: 470px;
   }
 
   /* airportSection 동일 */
+
+  
+  #trafficSection .trafficWrap ul {
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 3px;
+  }
+  
+  #trafficSection .trafficWrap li {
+    aspect-ratio: initial;
+    height: 100px;
+  }
+
+  #trafficSection .trafficWrap li h4 {
+    text-align: center;
+  }
+  
+  #trafficSection .trafficWrap li img {
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
+  }
 }
 
 
 /* 노트북 미디어쿼리 */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  main section:nth-child(3), main section:nth-child(5) {
+    padding: 0 50px;
+  }
+
+  main section:nth-child(even) .sectionTitle {
+    padding-right: 50px;
+  }
+
   #introSection {
     height: 700px;
   }
@@ -58,6 +84,36 @@
   
   #airportSection .guideWrap .toggleBtnWrap {
     display: none;
+  }
+
+
+  
+  #trafficSection .trafficWrap ul {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 5px;
+  }
+  
+  #trafficSection .trafficWrap li {
+    aspect-ratio: initial;
+    height: 120px;
+  }
+  
+  #trafficSection .trafficWrap li a {
+    width: 100%;
+    height: 100%;
+  }
+
+  #trafficSection .trafficWrap li h4 {
+    text-align: center;
+  }
+  
+  #trafficSection .trafficWrap li img {
+    width: 50px;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
   }
 }
 
@@ -84,7 +140,11 @@
   }
 
   main section:nth-child(3), main section:nth-child(5) {
-    padding: 80px 30px;
+    padding: 80px 50px;
+  }
+
+  main section:nth-child(even) .sectionTitle {
+    padding-right: 50px;
   }
 
   #introSection {
@@ -148,5 +208,66 @@
 
   #airportSection .guideWrap .toggleBtnWrap {
     display: none;
+  }
+
+
+  #trafficSection .trafficInfoWrap {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    flex-grow: 1;
+  }
+
+  #trafficSection .trafficInfoWrap article {
+    width: 100%;
+    height: 100%;
+  }
+
+  #trafficSection .busStateWrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #trafficSection .busStateWrap h4 {
+    font-size: var(--font-mlz);
+  }
+
+  #trafficSection .busStateWrap .busState {
+    flex-grow: 1;
+  }
+  
+  #trafficSection .busStateWrap .busState li:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  
+  #trafficSection .busStateWrap .busState .busTitle {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #trafficSection .busState .busTitle p {
+    font-size: var(--font-sz);
+  }
+  
+  #trafficSection .trafficWrap ul {
+    height: 100%;
+  }
+
+  #trafficSection .trafficWrap li {
+    aspect-ratio: initial;
+  }
+  
+  #trafficSection .trafficWrap li h4 {
+    font-size: var(--font-mlz);
+  }
+  
+  #trafficSection .trafficWrap li p {
+    display: block;
+    font-size: var(--font-smz);
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  #trafficSection .trafficWrap li img {
+    width: 80px;
   }
 }

@@ -202,7 +202,7 @@ section .sectionTitle h3 {
 }
 
 #trafficSection .busStateWrap h4 {
-  font-weight: var(--font-sbw);
+  font-weight: var(--font-bw);
   margin-bottom: 10px;
 }
 
@@ -278,6 +278,10 @@ pc 이상부터 그리드 적용
 #trafficSection .trafficWrap li a {
   width: 100%;
   height: 100%;
+}
+
+#trafficSection .trafficWrap li p {
+  display: none;
 }
 
 #trafficSection .trafficWrap li img {
