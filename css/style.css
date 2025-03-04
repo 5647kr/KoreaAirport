@@ -291,3 +291,79 @@ pc 이상부터 그리드 적용
   width: 40px;
   aspect-ratio: 1 / 1;
 }
+
+
+#tipSection {
+  padding: 30px 0;
+  background-color: var(--main-color);
+}
+
+#tipSection h2 {
+  color: var(--white-color);
+}
+
+#tipSection h3 {
+  color: rgba(249, 252, 255, 0.5);
+}
+
+#tipSection .tipList {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+}
+
+#tipSection .tipList::-webkit-scrollbar {
+  display: none;
+}
+
+#tipSection .tipList li {
+  background: no-repeat 50% 100% / cover;
+  min-width: 140px;
+  height: 280px;
+  border-radius: 60px;
+  padding: 20px;
+}
+
+#tipSection .tipList li a {
+  width: 100%;
+  height: 100%;
+}
+
+#tipSection .tipList :where(h4, p) {
+  color: var(--white-color);
+  font-weight: var(--font-sbw);
+  text-align: center;
+}
+
+#tipSection .tipList li:nth-child(even) a {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#tipSection .tipList li:nth-child(1) {
+  background-image: url("../img/photo/tip-restaurant.jpg");
+}
+
+#tipSection .tipList li:nth-child(2) {
+  background-image: url("../img/photo/tip-shopping.jpg");
+}
+
+#tipSection .tipList li:nth-child(3) {
+  background-image: url("../img/photo/tip-pet.jpg");
+}
+
+#tipSection .tipList li:nth-child(4) {
+  background-image: url("../img/photo/tip-lounge.jpg");
+}
+
+#tipSection .tipList li:nth-child(5) {
+  background-image: url("../img/photo/tip-play.jpg");
+}
+
+#tipSection .tipList li:nth-child(6) {
+  background-image: url("../img/photo/tip-notice.jpg");
+}
+
+#tipSection .tipList li:nth-child(even) {
+  margin-top: 70px;
+}
