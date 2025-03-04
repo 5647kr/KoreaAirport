@@ -115,6 +115,12 @@
     right: 0;
     transform: translateX(-50%);
   }
+
+  #tipSection .tipList {
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 0;
+  }
 }
 
 
@@ -269,5 +275,25 @@
   
   #trafficSection .trafficWrap li img {
     width: 80px;
+  }
+
+  #tipSection .tipList {
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  #tipSection .tipList li {
+    width: 200px;
+    height: 400px;
+    border-radius: 90px;
+  }
+
+  #tipSection .tipList :where(h4, p) {
+    font-size: var(--font-mlz);
+  }
+
+  #tipSection .tipList li:nth-child(even) {
+    margin-top: 140px;
   }
 }
