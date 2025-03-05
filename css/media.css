@@ -296,4 +296,8 @@
   #tipSection .tipList li:nth-child(even) {
     margin-top: 140px;
   }
+
+  footer p {
+    font-size: var(--font-mlz);
+  }
 }
