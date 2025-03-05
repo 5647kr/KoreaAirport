@@ -367,3 +367,36 @@ pc 이상부터 그리드 적용
 #tipSection .tipList li:nth-child(even) {
   margin-top: 70px;
 }
+
+#flightSection .flightList {
+  border: 1px solid var(--main-color);
+  padding: 20px;
+  min-height: 400px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#flightSection .flightList strong {
+  font-weight: var(--font-mw);
+  margin-top: 4px;
+}
+
+footer {
+  background-color: #222222;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer img {
+  height: 32px;
+}
+
+footer p {
+  color: var(--white-color);
+}
