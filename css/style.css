@@ -125,6 +125,7 @@ section .sectionTitle h3 {
 #airportSection .guideList {
   width: 300%;
   display: flex;
+  margin-left: -100%;
 }
 
 /* 노트북 이후부터 padding, bg 없음 */
@@ -211,12 +212,6 @@ section .sectionTitle h3 {
   border-radius: 10px;
   padding: 30px;
 }
-
-/* 
-pc 이상부터 그리드 적용
-#trafficSection .busStateWrap .busState ul {
-  display: grid;
-} */
 
 #trafficSection .busStateWrap .busState li:not(:last-child) {
   margin-bottom: 20px;
