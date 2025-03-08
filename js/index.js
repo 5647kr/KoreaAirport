@@ -17,13 +17,19 @@ class KoreaAirport {
 
     const main = document.querySelector("main");
     this.introSection = main.querySelector("#introSection");
-    this.introNoticeList = main.querySelector("#introSection .noticeList")
+    this.introNoticeList = main.querySelector("#introSection .noticeList");
+
+    this.airportSection = main.querySelector("#airportSection");
+    this.guideList = main.querySelector("#airportSection .guideList");
+    this.leftBtn = main.querySelector("#airportSection .toggleBtnWrap button")
+    this.rightBtn = main.querySelector("#airportSection .toggleBtnWrap button:last-child");
   }
 
   pageEvent() {
     this.headerEvent();
     this.introNoticeEvent();
     this.mainImgFadeEvent();
+    this.defaultImgSlide();
   }
 
   headerEvent() {
@@ -139,6 +145,29 @@ class KoreaAirport {
         this.introNoticeList.append(firstLi);
       }
     }, 4000)
+  }
+
+  defaultImgSlide() {
+    const guideItems = this.airportSection.querySelectorAll(".guideList > li");
+    const lastItem = this.airportSection.querySelector(".guideList > li:last-child");
+    this.guideList.insertBefore(lastItem, guideItems[0]);
+    
+    console.log(lastItem, guideItems)
+    
+    this.imgSlideEvent();
+  }
+  
+  imgSlideEvent() {
+    this.leftBtn.addEventListener("click", () => {
+      const guideItems = this.airportSection.querySelectorAll(".guideList > li");
+      const lastItem = this.airportSection.querySelector(".guideList > li:last-child");
+      this.guideList.insertBefore(lastItem, guideItems[0]);
+    })
+    
+    this.rightBtn.addEventListener("click", () => {
+      const firstLi = this.airportSection.querySelector(".guideList > li");
+      this.guideList.appendChild(firstLi);
+    })
   }
 }
 
