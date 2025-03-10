@@ -23,6 +23,7 @@ class KoreaAirport {
     this.guideList = main.querySelector("#airportSection .guideList");
     this.leftBtn = main.querySelector("#airportSection .toggleBtnWrap button")
     this.rightBtn = main.querySelector("#airportSection .toggleBtnWrap button:last-child");
+    
   }
 
   pageEvent() {
@@ -148,12 +149,12 @@ class KoreaAirport {
   }
 
   defaultImgSlide() {
-    const guideItems = this.airportSection.querySelectorAll(".guideList > li");
-    const lastItem = this.airportSection.querySelector(".guideList > li:last-child");
-    this.guideList.insertBefore(lastItem, guideItems[0]);
-    
-    console.log(lastItem, guideItems)
-    
+    if(window.innerWidth < 769) {
+      const guideItems = this.airportSection.querySelectorAll(".guideList > li");
+      const lastItem = this.airportSection.querySelector(".guideList > li:last-child");
+      this.guideList.insertBefore(lastItem, guideItems[0]);
+      
+    }
     this.imgSlideEvent();
   }
   

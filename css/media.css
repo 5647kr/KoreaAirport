@@ -124,7 +124,8 @@
   }
 
   #tipSection .tipList li:hover {
-    transform: scale(1.5);
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
   }
 }
 
@@ -302,8 +303,8 @@
   }
 
   #tipSection .tipList li:hover {
-    transform: scaleY(1.1);
-    transition: transform 0.5s ease;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
   }
 
   #tipSection .tipList li:nth-child(odd):hover {

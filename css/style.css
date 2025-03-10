@@ -1,7 +1,6 @@
 main section {
   width: 100%;
   margin-bottom: 80px;
-  box-shadow: inset 0 0 10px red;
 }
 
 main section:nth-child(3), main section:nth-child(5) {
@@ -238,11 +237,22 @@ section .sectionTitle h3 {
 }
 
 #trafficSection .busStateWrap .busState .progressing {
-  width: 90%;
+  width: 100%;
   height: 10px;
   border-radius: 20px;
   background-color: #DC143C;
+  transition: width 1s ease;
 }
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 
 #trafficSection .busState .trafficNotice {
   padding: 30px 0;
