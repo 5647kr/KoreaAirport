@@ -33,8 +33,6 @@
     height: 470px;
   }
 
-  /* airportSection 동일 */
-
   
   #trafficSection .trafficWrap ul {
     grid-template-columns: repeat(9, 1fr);
@@ -72,7 +70,7 @@
   #introSection {
     height: 700px;
   }
-  
+
   #airportSection .guideList {
     width: 100%;
     margin-left: 0;
@@ -87,7 +85,7 @@
     display: none;
   }
 
-
+  
   
   #trafficSection .trafficWrap ul {
     display: grid;
@@ -132,7 +130,12 @@
 
 /* pc ~ 4k 미디어쿼리 */
 @media screen and (min-width: 1025px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   main section {
+    height: 100vh;
     margin-bottom: 0;
   }
   
@@ -141,18 +144,17 @@
   }
   
   section .sectionTitle h3 {
-    font-size: 50px;
+    font-size: 40px;
   }
   
   section:not(:first-child) {
-    height: calc(100vh - 100px);
-    padding: 80px 0;
+    padding-top: 160px;
     display: flex;
     flex-direction: column;
   }
 
   main section:nth-child(3), main section:nth-child(5) {
-    padding: 80px 50px;
+    padding: 160px 50px;
   }
 
   main section:nth-child(even) .sectionTitle {
@@ -168,8 +170,9 @@
   }
 
   #airportSection .guideWrap {
-    flex-grow: 1;
+    height: 100%;
   }
+
 
   #airportSection .guideList {
     width: 100%;
@@ -189,7 +192,7 @@
   }
   
   #airportSection .guideList article :where(h3, h4) {
-    font-size: 50px;
+    font-size: 40px;
   }
   
   #airportSection .guideList article h4 {
@@ -197,7 +200,8 @@
   }
   
   #airportSection .guideList article ul {
-    margin-top: 40px;
+    margin-top: 60px;
+    row-gap: 60px;
   }
 
   #airportSection .guideList article a {
@@ -206,8 +210,8 @@
   }
   
   #airportSection .guideList article img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     transition: transform 0.5s ease;
   }
 
@@ -269,12 +273,6 @@
   #trafficSection .trafficWrap li {
     aspect-ratio: initial;
   }
-
-  
-#trafficSection .trafficWrap li:hover {
-  background-color: var(--content-color);
-  transition: background-color 0.5s ease;
-}
   
   #trafficSection .trafficWrap li h4 {
     font-size: var(--font-mlz);
@@ -289,6 +287,12 @@
   #trafficSection .trafficWrap li img {
     width: 80px;
   }
+
+
+  #tipSection {
+    padding: 160px 0 0 0;
+  }
+
 
   #tipSection .tipList {
     width: 100%;
@@ -323,8 +327,12 @@
   #tipSection .tipList li:nth-child(even) {
     margin-top: 140px;
   }
-
+  
   footer p {
     font-size: var(--font-mlz);
+  }
+
+  .pageNav {
+    display: block;
   }
 }

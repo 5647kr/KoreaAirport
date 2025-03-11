@@ -116,6 +116,11 @@ section .sectionTitle h3 {
   color: var(--white-color);
 }
 
+
+
+
+
+
 #airportSection {
   overflow: hidden;
 }
@@ -195,6 +200,10 @@ section .sectionTitle h3 {
   justify-content: space-between;
 }
 
+
+
+
+
 #trafficSection .trafficInfoWrap {
   display: flex;
   flex-direction: column;
@@ -236,22 +245,16 @@ section .sectionTitle h3 {
   background-color: #D9D9D9;
 }
 
-#trafficSection .busStateWrap .busState .progressing {
+#trafficSection .busStateWrap .busState .progress::before {
+  content: "";
+  display: block;
   width: 100%;
   height: 10px;
   border-radius: 20px;
   background-color: #DC143C;
-  transition: width 1s ease;
 }
 
-@keyframes progress {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
+
 
 
 #trafficSection .busState .trafficNotice {
@@ -275,10 +278,16 @@ section .sectionTitle h3 {
 #trafficSection .trafficWrap li {
   aspect-ratio: 1 / 1;
   padding: 10px;
-  background-color: var(--bg-color);
+  background-color: #ddd;
   border-radius: 10px;
   position: relative;
 }
+
+#trafficSection .trafficWrap li:hover {
+  background-color: var(--content-color);
+  transition: background-color 0.5s ease;
+}
+
 
 #trafficSection .trafficWrap li a {
   width: 100%;
@@ -296,6 +305,8 @@ section .sectionTitle h3 {
   width: 40px;
   aspect-ratio: 1 / 1;
 }
+
+
 
 
 #tipSection {
@@ -373,6 +384,8 @@ section .sectionTitle h3 {
   margin-top: 70px;
 }
 
+
+
 #flightSection .flightList {
   border: 1px solid var(--main-color);
   padding: 20px;
@@ -389,9 +402,80 @@ section .sectionTitle h3 {
   margin-top: 4px;
 }
 
+
+.pageNav {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.pageNav ul li {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  gap: 8px;
+  position: relative;
+}
+
+.pageNav ul li.active .navIcon {
+  background-color: var(--main-color);
+}
+
+.pageNav .navIcon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--main-color);
+  border-radius: 100%;
+}
+
+.pageNav .pageTitle {
+  width: max-content;
+  background-color: var(--main-color);
+  border-radius: 6px;
+  color: white;
+  padding: 4px;
+  font-size: 12px;
+  position: absolute;
+  margin-left: 20px;
+  opacity: 0;
+}
+
+.pageNav .navIcon:hover {
+  cursor: pointer;
+}
+
+.pageNav .navIcon:hover + .pageTitle {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.pageNav.white ul li .navIcon {
+  border-color: var(--bg-color);
+}
+
+.pageNav.white ul li.active .navIcon {
+  background-color: var(--bg-color);
+}
+
+.pageNav.white ul li:last-child {
+  display: none;
+}
+
+.pageNav ul li:last-child {
+  display: none;
+}
+
 footer {
   background-color: #222222;
-  min-height: 250px;
+  height: 250px;
+}
+
+footer section {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
