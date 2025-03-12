@@ -80,18 +80,18 @@ class KoreaAirport {
         // img가 있는 경우 회전 상태를 토글
         if (img) {
           if (img.style.transform === "rotate(180deg)") {
-            img.style.transform = "rotate(0deg)"; // 회전 상태를 되돌림
+            img.style.transform = "rotate(0deg)";
           } else {
-            img.style.transform = "rotate(180deg)"; // 회전
+            img.style.transform = "rotate(180deg)";
           }
         }
     
         // span의 다음 형제 요소의 display를 토글
         if (nextElement) {
           if (nextElement.style.display === "block") {
-            nextElement.style.display = "none"; // 숨기기
+            nextElement.style.display = "none";
           } else {
-            nextElement.style.display = "block"; // 보이기
+            nextElement.style.display = "block";
           }
         }
       });
@@ -124,49 +124,37 @@ class KoreaAirport {
     const navButtons = document.querySelectorAll("#introSection .navBtnWrap button");
     let currentIndex = 0;
   
-    // 첫 번째 이미지를 바로 보이게 설정
     items[currentIndex].style.opacity = 1;
   
-    // 버튼 초기 상태 설정
     updateButtonState(currentIndex);
   
-    // 자동 슬라이드를 위한 interval 변수 선언
     let autoSlideInterval;
   
     // 다음 이미지를 표시하는 함수
     function showNextImage() {
-      // 현재 이미지 fade out
       items[currentIndex].style.animationName = "fadeOut";
   
-      // 다음 이미지 인덱스 계산
       currentIndex = (currentIndex + 1) % items.length;
   
-      // 다음 이미지 fade in
       items[currentIndex].style.animationName = "fadeIn";
   
-      // 버튼 상태 업데이트
       updateButtonState(currentIndex);
     }
   
-    // 3초마다 showNextImage 함수 호출
     autoSlideInterval = setInterval(showNextImage, 4000);
   
     // 네비게이션 버튼 클릭 이벤트
     navButtons.forEach((btn, index) => {
       btn.addEventListener("click", () => {
-        // 자동 슬라이드 일시 중지
         clearInterval(autoSlideInterval);
   
-        // 현재 이미지 fade out
         items[currentIndex].style.animationName = "fadeOut";
   
-        currentIndex = index; // 버튼의 순서에 맞춰 인덱스를 설정
-        items[currentIndex].style.animationName = "fadeIn"; // 클릭된 이미지 fade in
+        currentIndex = index;
+        items[currentIndex].style.animationName = "fadeIn";
   
-        // 버튼 상태 업데이트
         updateButtonState(currentIndex);
   
-        // 3초 후 다시 자동 슬라이드 시작
         autoSlideInterval = setInterval(showNextImage, 4000);
       });
     });
@@ -175,9 +163,9 @@ class KoreaAirport {
     function updateButtonState(index) {
       navButtons.forEach((btn, i) => {
         if (i === index) {
-          btn.classList.add("active"); // 현재 활성화된 버튼에 "active" 클래스 추가
+          btn.classList.add("active");
         } else {
-          btn.classList.remove("active"); // 나머지 버튼에서 "active" 클래스 제거
+          btn.classList.remove("active");
         }
       });
     }
