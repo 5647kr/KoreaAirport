@@ -67,6 +67,29 @@ section .sectionTitle h3 {
   }
 }
 
+#introSection .navBtnWrap {
+  position: absolute;
+  left: 20px;
+  bottom: 50px;
+  display: flex;
+  gap: 10px;
+}
+
+#introSection .navBtnWrap button {
+  font-size: var(--font-smz);
+  color: var(--bg-color);
+  transition: color 0.3s ease;
+}
+
+#introSection .navBtnWrap button:hover {
+  color: var(--sub-color);
+  
+}
+
+#introSection .navBtnWrap button.active {
+  color: var(--main-color);
+}
+
 #introSection .alertWrap {
   width: 100%;
   height: 40px;

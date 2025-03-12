@@ -61,7 +61,7 @@ class KoreaAirport {
     // 메인 메뉴 선택, 세부 메뉴 열기
     this.mainMenu.forEach((menu) => {
       menu.addEventListener("click", () => {
-        const activeMenu = Array.from(this.mainMenu).find(m => m.classList.contains('active'));
+        const activeMenu = Array.from(this.mainMenu).find(m => m.classList.contains("active"));
 
         if(activeMenu) {
           activeMenu.classList.remove("active")
@@ -120,25 +120,67 @@ class KoreaAirport {
   }
 
   mainImgFadeEvent() {
-    const items = document.querySelectorAll('#introSection .imgWrap li');
+    const items = document.querySelectorAll("#introSection .imgWrap li");
+    const navButtons = document.querySelectorAll("#introSection .navBtnWrap button");
     let currentIndex = 0;
-
+  
     // 첫 번째 이미지를 바로 보이게 설정
-    items[currentIndex].style.opacity = 1; // 첫 번째 이미지를 보이게 함
-
+    items[currentIndex].style.opacity = 1;
+  
+    // 버튼 초기 상태 설정
+    updateButtonState(currentIndex);
+  
+    // 자동 슬라이드를 위한 interval 변수 선언
+    let autoSlideInterval;
+  
+    // 다음 이미지를 표시하는 함수
     function showNextImage() {
-        // 현재 이미지 fade out
-        items[currentIndex].style.animationName = 'fadeOut';
-        
-        // 다음 이미지 인덱스 계산
-        currentIndex = (currentIndex + 1) % items.length;
-
-        // 다음 이미지 fade in
-        items[currentIndex].style.animationName = 'fadeIn';
+      // 현재 이미지 fade out
+      items[currentIndex].style.animationName = "fadeOut";
+  
+      // 다음 이미지 인덱스 계산
+      currentIndex = (currentIndex + 1) % items.length;
+  
+      // 다음 이미지 fade in
+      items[currentIndex].style.animationName = "fadeIn";
+  
+      // 버튼 상태 업데이트
+      updateButtonState(currentIndex);
     }
-
+  
     // 3초마다 showNextImage 함수 호출
-    setInterval(showNextImage, 4000);
+    autoSlideInterval = setInterval(showNextImage, 4000);
+  
+    // 네비게이션 버튼 클릭 이벤트
+    navButtons.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        // 자동 슬라이드 일시 중지
+        clearInterval(autoSlideInterval);
+  
+        // 현재 이미지 fade out
+        items[currentIndex].style.animationName = "fadeOut";
+  
+        currentIndex = index; // 버튼의 순서에 맞춰 인덱스를 설정
+        items[currentIndex].style.animationName = "fadeIn"; // 클릭된 이미지 fade in
+  
+        // 버튼 상태 업데이트
+        updateButtonState(currentIndex);
+  
+        // 3초 후 다시 자동 슬라이드 시작
+        autoSlideInterval = setInterval(showNextImage, 4000);
+      });
+    });
+  
+    // 버튼 상태를 업데이트하는 함수
+    function updateButtonState(index) {
+      navButtons.forEach((btn, i) => {
+        if (i === index) {
+          btn.classList.add("active"); // 현재 활성화된 버튼에 "active" 클래스 추가
+        } else {
+          btn.classList.remove("active"); // 나머지 버튼에서 "active" 클래스 제거
+        }
+      });
+    }
   }
 
   // 안내문 애니메이션

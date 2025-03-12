@@ -32,7 +32,6 @@
   #introSection {
     height: 470px;
   }
-
   
   #trafficSection .trafficWrap ul {
     grid-template-columns: repeat(9, 1fr);
@@ -69,6 +68,10 @@
 
   #introSection {
     height: 700px;
+  }
+
+  #introSection .navBtnWrap button {
+    font-size: var(--font-mz);
   }
 
   #airportSection .guideList {
@@ -163,6 +166,10 @@
 
   #introSection {
     height: 100vh;
+  }
+
+  #introSection .navBtnWrap button {
+    font-size: var(--font-lz);
   }
 
   #airportSection {
