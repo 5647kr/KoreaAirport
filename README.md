@@ -296,7 +296,12 @@ KoreaAirport는 인천공항의 디자인을 참고하여 제작한 웹페이지
 <br>
 
 ## 6. 시연 이미지
+
+### PC
 ![Animation](https://github.com/user-attachments/assets/0302cb17-eacf-43bd-8cbb-775b7df51e08)
+
+### Mobile
+![Animation](https://github.com/user-attachments/assets/a950c978-32e1-425e-b2cc-d0a26e9d485c)
 
 
 
